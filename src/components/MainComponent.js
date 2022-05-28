@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Switch, Redirect, Route } from "react-router-dom";
 import Menu from "./MenuComponent";
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
@@ -11,6 +10,17 @@ import { PROMOTIONS } from "../shared/promotions";
 import { LEADERS } from "../shared/leaders";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import DishDetail from "./DishdetailComponent";
+
+const DishWithId = ({ match }) => {
+  return (
+    <DishDetail
+      comments={this.props.comments}
+      dishes={this.props.dishes}
+      selectedDish={match.params.dishId}
+    />
+  );
+};
 
 const mapStateToProps = (state) => {
   return {
@@ -60,6 +70,7 @@ class Main extends Component {
               component={() => <Menu dishes={this.props.dishes} />}
             />
             <Route exact path="/contactus" component={Contact} />
+            <Route path="/menu/:dishId" component={DishWithId} />
             <Redirect to="/home" />
           </Switch>
         </div>
