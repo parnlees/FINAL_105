@@ -5,11 +5,10 @@ import {
   Button,
   Form,
   FormGroup,
+  FormFeedback,
   Label,
   Input,
   Col,
-  Row,
-  FormFeedback,
 } from "reactstrap";
 
 class Contact extends Component {
@@ -89,7 +88,6 @@ class Contact extends Component {
 
     return errors;
   }
-
   render() {
     const errors = this.validate(
       this.state.firstname,
