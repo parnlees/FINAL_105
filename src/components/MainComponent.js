@@ -70,7 +70,10 @@ class Main extends Component {
               component={() => <Menu dishes={this.props.dishes} />}
             />
             <Route exact path="/contactus" component={Contact} />
-            <Route path="/menu/:dishId" component={DishDetail} />
+            <Route
+              path="/menu/:dishId"
+              component={() => <DishDetail dishes={this.state.selectedDish} />}
+            />
             <Redirect to="/home" />
           </Switch>
         </div>
