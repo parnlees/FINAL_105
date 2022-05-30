@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Menu from "./MenuComponent";
+import Menu from "./AboutmeComponent";
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
 import Home from "./HomeComponent";
