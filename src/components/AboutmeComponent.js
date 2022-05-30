@@ -1,132 +1,84 @@
 import React from "react";
-import {
-  Card,
-  CardImg,
-  CardImgOverlay,
-  CardTitle,
-  Breadcrumb,
-  BreadcrumbItem,
-} from "reactstrap";
-import { Link } from "react-router-dom";
+import { Card, CardImg, CardTitle, CardText, CardBody } from "reactstrap";
 
-function Menu() {
+function Aboutme() {
   return (
-    <div className="body d-flex align-items-center justify-content-center">
-      <div className="d-flex align-content-around justify-content-evenly flex-wrap">
+    <div
+      className="body d-flex align-items-center justify-content-center"
+      style={{ marginTop: 50, marginBottom: 50, gap: 20 }}
+    >
+      <div
+        className="d-flex align-content-around justify-content-evenly flex-wrap"
+        style={{ gap: 20 }}
+      >
         <Card style={{ width: "300px", height: "350px" }}>
-          <div className="d-flex align-items-center justify-content-center">
+          <div
+            className="d-flex align-items-center justify-content-center"
+            style={{ marginTop: 70 }}
+          >
             <CardImg
-              alt="Frenchfries"
-              src={Frenchfries}
-              style={{ width: "150px", height: "100px" }}
+              alt="avartar"
+              src="assets\images\avatar.jpg"
+              style={{ width: "150px", height: "150px" }}
             />
           </div>
           <div className="d-flex align-items-center justify-content-center">
-            <CardBody>
-              <CardTitle tag="h5"> Frenchfries</CardTitle>
-              <CardSubtitle className="mb-2 text-muted" tag="h6">
-                hot dishes!
-              </CardSubtitle>
+            <CardBody className="d-flex align-content-around justify-content-evenly flex-wrap">
               <CardText>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum
-                harum consequuntur, ipsa illum ut a? Suscipit illum enim cumque
-                deserunt?
+                <b>Yanisa</b>
               </CardText>
-              <button
-                type="button"
-                className="d-flex align-items-center justify-content-center btn btn-outline-dark btn-small"
-              >
-                Bucket
-              </button>
             </CardBody>
           </div>
         </Card>
 
         <Card style={{ width: "300px", height: "350px" }}>
-          <div className="d-flex align-items-center justify-content-center">
-            <CardImg
-              alt="Hamburger"
-              src={Hamburger2}
-              style={{ width: "150px", height: "100px" }}
-            />
-          </div>
+          <div className="d-flex align-items-center justify-content-center"></div>
           <div className="d-flex align-items-center justify-content-center">
             <CardBody>
-              <CardTitle tag="h5">Hamburger</CardTitle>
-              <CardSubtitle className="mb-2 text-muted" tag="h6">
-                Main Menu !
-              </CardSubtitle>
-              <CardText>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum
-                harum consequuntur, ipsa illum ut a? Suscipit illum enim cumque
-                deserunt?
-              </CardText>
-              <button
-                type="button"
-                className="d-flex align-items-center justify-content-center btn btn-outline-dark btn-small"
-              >
-                Bucket
-              </button>
-            </CardBody>
-          </div>
-        </Card>
+              <CardTitle tag="h5">Yanisa Jaroenjan</CardTitle>
 
-        <Card style={{ width: "300px", height: "350px" }}>
-          <div className="d-flex align-items-center justify-content-center">
-            <CardImg
-              alt="Hamburger"
-              src={Hamburger2}
-              style={{ width: "150px", height: "100px" }}
-            />
-          </div>
-          <div className="d-flex align-items-center justify-content-center">
-            <CardBody>
-              <CardTitle tag="h5"> Hamburger</CardTitle>
-              <CardSubtitle className="mb-2 text-muted" tag="h6">
-                Main Menu !
-              </CardSubtitle>
               <CardText>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum
-                harum consequuntur, ipsa illum ut a? Suscipit illum enim cumque
-                deserunt?
+                Year 1 at Bachelor of Science (Information Technology) King
+                Mongkut's Institute of Technology
               </CardText>
-              <button
-                type="button"
-                className="d-flex align-items-center justify-content-center btn btn-outline-dark btn-small"
-              >
-                Bucket
-              </button>
             </CardBody>
           </div>
         </Card>
       </div>
 
-      <div className="d-flex align-content-around justify-content-evenly flex-wrap">
+      <div
+        className="d-flex align-content-around justify-content-evenly flex-wrap"
+        style={{ gap: 20 }}
+      >
         <Card style={{ width: "300px", height: "350px" }}>
-          <div className="d-flex align-content-between justify-content-center">
-            <CardImg
-              alt="Frenchfries"
-              src={Frenchfries}
-              style={{ width: "150px", height: "100px" }}
-            />
-          </div>
+          <div className="d-flex align-items-center justify-content-center"></div>
           <div className="d-flex align-items-center justify-content-center">
             <CardBody>
-              <CardTitle tag="h5"> Frenchfries</CardTitle>
-              <CardSubtitle className="mb-2 text-muted" tag="h6">
-                hot dishes!
-              </CardSubtitle>
+              <CardTitle tag="h5">My favorite subject</CardTitle>
+
               <CardText>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum
-                harum consequuntur, ipsa illum ut a? Suscipit illum enim cumque
+                1. Math because it's contains a fixed formula.
+              </CardText>
+              <CardText>
+                2. English, I want to work in a foreign company.
+              </CardText>
+              <CardText>3. CSC102 because I love JAVA.</CardText>
+            </CardBody>
+          </div>
+        </Card>
+
+        <Card style={{ width: "300px", height: "350px" }}>
+          <div className="d-flex align-content-between justify-content-center"></div>
+          <div className="d-flex align-items-center justify-content-center">
+            <CardBody>
+              <CardTitle tag="h5">My fovorite movies</CardTitle>
+              <CardText>
+                1. Harry Potter, it's fun and including a lot of magic !<br />{" "}
+                2. Doreamon the movies, I love their relationship and special
+                thing of Doreamon. <br /> 3. Conan the movies, I love it because
+                they from Japan too. I love plot and style of this movies.
                 deserunt?
               </CardText>
-              <button
-                type="button"
-                className="d-flex align-items-center justify-content-center btn btn-outline-dark btn-small"
-              >
-                Bucket
-              </button>
             </CardBody>
           </div>
         </Card>
@@ -135,4 +87,4 @@ function Menu() {
   );
 }
 
-export default Menu;
+export default Aboutme;

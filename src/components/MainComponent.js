@@ -1,30 +1,30 @@
 import React, { Component } from "react";
-import Menu from "./AboutmeComponent";
+import Aboutme from "./AboutmeComponent";
 import Header from "./HeaderComponent";
 import Footer from "./FooterComponent";
 import Home from "./HomeComponent";
-import Contact from "./ContactComponent";
-import { DISHES } from "../shared/dishes";
+import Photo from "./PhotoComponent";
+import { INFOS } from "../shared/infos";
 import { COMMENTS } from "../shared/comments";
 import { PROMOTIONS } from "../shared/promotions";
 import { LEADERS } from "../shared/leaders";
 import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import DishDetail from "./DishdetailComponent";
+import InfoDetail from "./InfoDetailComponent";
 
-const DishWithId = ({ match }) => {
+const InfoWithId = ({ match }) => {
   return (
-    <DishDetail
+    <InfoDetail
       comments={this.props.comments}
-      dishes={this.props.dishes}
-      selectedDish={match.params.dishId}
+      Info={this.props.dishes}
+      selectedInfo={match.params.infoId}
     />
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    dishes: state.dishes,
+    infos: state.infos,
     comments: state.comments,
     promotions: state.promotions,
     leaders: state.leaders,
@@ -35,23 +35,23 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dishes: DISHES,
+      infos: INFOS,
       comments: COMMENTS,
       promotions: PROMOTIONS,
       leaders: LEADERS,
-      selectedDish: null,
+      selectedInfo: null,
     };
   }
 
-  onDishSelect(dishId) {
-    this.setState({ selectedDish: dishId });
+  onInfoSelect(infoId) {
+    this.setState({ selectedInfo: infoId });
   }
 
   render() {
     const HomePage = () => {
       return (
         <Home
-          dish={this.props.dishes.filter((dish) => dish.featured)[0]}
+          info={this.props.Infos.filter((info) => info.featured)[0]}
           promotion={this.props.promotions.filter((promo) => promo.featured)[0]}
           leader={this.props.leaders.filter((leader) => leader.featured)[0]}
         />
@@ -63,18 +63,17 @@ class Main extends Component {
         <Header />
         <div>
           <Switch>
-            <Route path="/home" component={HomePage} />
+            <Route path="/home" component={Home} />
+            <Route path="/Aboutme" component={Aboutme} />
             <Route
               exact
-              path="/menu"
-              component={() => <Menu dishes={this.props.dishes} />}
+              path="/Photo"
+              component={() => <Photo infos={this.props.photo} />}
             />
-            <Route exact path="/contactus" component={Contact} />
             <Route
-              path="/menu/:dishId"
-              component={() => <DishDetail dishes={this.state.selectedDish} />}
+              path="/photo/:infoId"
+              component={() => <InfoDetail infos={this.state.selectedInfo} />}
             />
-            <Redirect to="/home" />
           </Switch>
         </div>
         <Footer />

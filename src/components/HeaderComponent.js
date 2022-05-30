@@ -47,12 +47,7 @@ class Header extends Component {
           <div className="d-flex container">
             <NavbarToggler onClick={this.toggleNav} />
             <NavbarBrand className="mr-auto" href="/">
-              <img
-                src="assets/images/logo.png"
-                height="30"
-                width="41"
-                alt="logo"
-              />
+              <h3>🤩</h3>
             </NavbarBrand>
             <Collapse isOpen={this.state.isNavOpen} navbar>
               <Nav navbar>
@@ -62,12 +57,12 @@ class Header extends Component {
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-link" to="/menu">
+                  <NavLink className="nav-link" to="/Aboutme">
                     <span className="fa fa-info fa-lg"></span> About Me
                   </NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink className="nav-link" to="/contact">
+                  <NavLink className="nav-link" to="/photo">
                     <span className="fa fa-list fa-lg"></span> Photo Gallery
                   </NavLink>
                 </NavItem>

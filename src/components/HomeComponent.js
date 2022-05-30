@@ -8,7 +8,7 @@ import {
   CardSubtitle,
 } from "reactstrap";
 
-function Home(props) {
+function Home() {
   return (
     <div
       className="body d-flex align-items-center justify-content-center"
