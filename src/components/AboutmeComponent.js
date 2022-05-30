@@ -36,7 +36,6 @@ function Aboutme() {
           <div className="d-flex align-items-center justify-content-center">
             <CardBody>
               <CardTitle tag="h5">Yanisa Jaroenjan</CardTitle>
-
               <CardText>
                 Year 1 at Bachelor of Science (Information Technology) King
                 Mongkut's Institute of Technology

@@ -16,7 +16,7 @@ const InfoWithId = ({ match }) => {
   return (
     <InfoDetail
       comments={this.props.comments}
-      Info={this.props.dishes}
+      Infos={this.props.dishes}
       selectedInfo={match.params.infoId}
     />
   );
@@ -25,9 +25,9 @@ const InfoWithId = ({ match }) => {
 const mapStateToProps = (state) => {
   return {
     infos: state.infos,
-    comments: state.comments,
-    promotions: state.promotions,
-    leaders: state.leaders,
+    // comments: state.comments,
+    // promotions: state.promotions,
+    // leaders: state.leaders,
   };
 };
 
@@ -36,10 +36,10 @@ class Main extends Component {
     super(props);
     this.state = {
       infos: INFOS,
-      comments: COMMENTS,
-      promotions: PROMOTIONS,
-      leaders: LEADERS,
-      selectedInfo: null,
+      // comments: COMMENTS,
+      // promotions: PROMOTIONS,
+      // leaders: LEADERS,
+      // selectedInfo: null,
     };
   }
 
@@ -48,13 +48,15 @@ class Main extends Component {
   }
 
   render() {
-    const HomePage = () => {
+    const Home = () => {
+      console.log(this.props);
       return (
-        <Home
-          info={this.props.Infos.filter((info) => info.featured)[0]}
-          promotion={this.props.promotions.filter((promo) => promo.featured)[0]}
-          leader={this.props.leaders.filter((leader) => leader.featured)[0]}
-        />
+        <></>
+        // <Home
+        //   info={this.props.infos.filter((info) => info.featured)[0]}
+        // promotion={this.props.promotions.filter((promo) => promo.featured)[0]}
+        // leader={this.props.leaders.filter((leader) => leader.featured)[0]}
+        ///>
       );
     };
 
@@ -66,13 +68,9 @@ class Main extends Component {
             <Route path="/home" component={Home} />
             <Route path="/Aboutme" component={Aboutme} />
             <Route
-              exact
-              path="/Photo"
-              component={() => <Photo infos={this.props.photo} />}
-            />
-            <Route
-              path="/photo/:infoId"
-              component={() => <InfoDetail infos={this.state.selectedInfo} />}
+              //exact
+              path="/Photo/:INFOSId"
+              component={() => <InfoDetail infoS={this.props.photo} />}
             />
           </Switch>
         </div>

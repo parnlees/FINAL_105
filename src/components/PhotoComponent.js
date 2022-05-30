@@ -8,14 +8,15 @@ import {
   BreadcrumbItem,
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import { INFOS } from "../shared/infos";
 
-function RenderPhotoItem({ info, onClick }) {
+function RenderPhotoItem({ INFOS, onClick }) {
   return (
     <Card>
-      <Link to={`/photo/${info.id}`}>
-        <CardImg width="100%" src={info.image} alt={info.name} />
+      <Link to={`/photo/${INFOS.id}`}>
+        <CardImg width="100%" src={INFOS.image} alt={INFOS.name} />
         <CardImgOverlay>
-          <CardTitle>{info.name}</CardTitle>
+          <CardTitle>{INFOS.name}</CardTitle>
         </CardImgOverlay>
       </Link>
     </Card>
@@ -24,17 +25,19 @@ function RenderPhotoItem({ info, onClick }) {
 
 const Photo = (props) => {
   console.log(props);
-  const Photo =
-    props ??
-    props.infos.map((info) => {
-      return (
-        <div className="col-12 col-md-5 m-1" key={info.id}>
-          <RenderPhotoItem info={info} onClick={props.onClick} />
-        </div>
-      );
-    });
+  return (
+    <div>
+      {props.infos?.map((info) => {
+        return (
+          <div className="col-12 col-md-5 m-1" key={info.id}>
+            <RenderPhotoItem info={info} onClick={props.onClick} />
+          </div>
+        );
+      })}
+    </div>
+  );
 
-  return <div className="container">{Photo}</div>;
+  // return <div className="container">{Photo}</div>;
 };
 
 export default Photo;
